@@ -1,6 +1,12 @@
+import allure
+from allure_commons.types import Severity
 from pages.registration_page import RegistrationPage
 
 
+@allure.tag("web")
+@allure.severity(Severity.NORMAL)
+@allure.feature("Тестирование сайта demoqa.com")
+@allure.story("Проверка заполнения формы 'Practice Form'")
 def test_user_can_send_form():
     registration_page = RegistrationPage()
     (
