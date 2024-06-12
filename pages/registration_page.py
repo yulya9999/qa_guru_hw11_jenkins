@@ -39,7 +39,7 @@ class RegistrationPage:
         browser.element("#currentAddress").type(value)
         return self
 
-    @allure.step('Установка даты (Date of Birth)')
+    @allure.step('Установка даты "Date of Birth"')
     def fill_date_of_birth(self, month, day, year):
         browser.element("#dateOfBirthInput").click()
         browser.element(f'.react-datepicker__month-select option[value="{month}"]').click()
@@ -55,24 +55,24 @@ class RegistrationPage:
 
         return self
 
-    @allure.step('Установка радиокнопки в поле Gender')
+    @allure.step('Установка радиокнопки в поле "Gender"')
     def fill_gender(self, value):
         browser.element(f'[for="gender-radio-{value}"]').click()
         return self
 
-    @allure.step('Установка чекбокса в поле Hobbies')
+    @allure.step('Установка чекбокса в поле "Hobbies"')
     def fill_hobbies(self):
         browser.element('[for="hobbies-checkbox-1"]').click()
         return self
 
-    @allure.step('Загрузка изображения. Picture')
+    @allure.step('Загрузка изображения. Поле "Picture"')
     def upload_file(self, file_name):
         browser.element('#uploadPicture').type(
             str(Path(tests.__file__).parent.joinpath(f'data/{file_name}'))
         )
         return self
 
-    @allure.step('Выбор из выпадающего списка (State)')
+    @allure.step('Выбор из выпадающего списка "State"')
     def fill_state(self, value):
         self.state.perform(command.js.scroll_into_view).click()
         self.state.all('[id^=react-select-3-option]').element_by(
@@ -81,7 +81,7 @@ class RegistrationPage:
 
         return self
 
-    @allure.step('Выбор из выпадающего списка (City)')
+    @allure.step('Выбор из выпадающего списка "City"')
     def fill_city(self, value):
         self.city.click()
         self.city.all('[id^=react-select-4-option]').element_by(
@@ -90,7 +90,7 @@ class RegistrationPage:
 
         return self
 
-    @allure.step('Отправка формы. Submit')
+    @allure.step('Отправка формы. Кнопка "Submit"')
     def submit(self):
         browser.element("#submit").click()
         return self

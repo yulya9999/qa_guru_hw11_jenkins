@@ -2,7 +2,7 @@
 tests/allure-results
 
 #security
-tests/security.env
+tests/.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
