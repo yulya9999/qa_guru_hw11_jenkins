@@ -49,7 +49,7 @@ class RegistrationPage:
 
     @allure.step('Заполнение поля "Subjects"')
     def fill_subject(self, value):
-        browser.element('element').perform(command.js.scroll_into_view)  # прокрутка до элемента
+        browser.element('#subjectsInput').perform(command.js.scroll_into_view)  # прокрутка до элемента
         browser.element("#subjectsInput").type(f"{value}")
         browser.element(".subjects-auto-complete__menu").click()
         browser.element("#subjectsInput").type(f"{value}").press_tab()
